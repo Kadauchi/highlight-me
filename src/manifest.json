@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "__package.name__",
+  "version": "__package.version__",
+
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+
+  "browser_action": {
+    "default_title": "__package.name__",
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+    "scripts": ["background.ts"],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.ts"]
+    }
+  ],
+
+  "permissions": ["<all_urls>"]
+}
